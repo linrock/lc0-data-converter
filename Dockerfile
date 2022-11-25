@@ -29,7 +29,7 @@ RUN cp stockfish /usr/local/bin
 
 WORKDIR /root
 COPY run_rescorer.sh .
-COPY filter_chess960.py .
+COPY filter_no_castling.py .
 
 RUN echo "alias ls='ls --color=auto -X --group-directories-first'" >> ~/.bashrc
 
