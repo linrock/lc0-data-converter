@@ -2,6 +2,23 @@
 
 Converts lc0 training data to binpack files for Stockfish NNUE training.
 
+
+### Downloading tablebases
+
+https://tablebase.lichess.ovh/tables/standard/
+
+Example of how to download 3,4,5,6-piece Syzygy tablebases
+
+```bash
+wget --mirror --no-parent --no-directories -e robots=off \
+  https://tablebase.lichess.ovh/tables/standard/3-4-5-dtz-nr/
+wget --mirror --no-parent --no-directories -e robots=off \
+  https://tablebase.lichess.ovh/tables/standard/6-dtz/
+wget --mirror --no-parent --no-directories -e robots=off \
+  https://tablebase.lichess.ovh/tables/standard/6-wdl/
+```
+
+
 ### Resources
 
 https://github.com/glinscott/nnue-pytorch/wiki/Training-datasets
