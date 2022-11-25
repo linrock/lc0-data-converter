@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tmpfile=$(mktemp /tmp/lc0-data-urls.XXXXXX)
-for filename in training-run1-test80-202211{20..24}-{00..23}17
+for filename in training-run1-test80-202211{14..19}-{00..23}17
 do
   echo $filename >> $tmpfile
 done

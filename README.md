@@ -18,6 +18,17 @@ wget --mirror --no-parent --no-directories -e robots=off \
   https://tablebase.lichess.ovh/tables/standard/6-wdl/
 ```
 
+List of common 7-piece tablebase positions ([source](https://groups.google.com/g/fishcooking/c/chP0S4jXTxU))
+
+KBPPPvKB
+KBPPvKBP
+KBPPvKNP
+KNPPvKBP
+KNPPvKNP
+KPPPvKBP
+KPPPvKPP
+KQPPvKQP
+KRPPvKRP
 
 ### Resources
 
