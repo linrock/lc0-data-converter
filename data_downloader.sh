@@ -6,7 +6,7 @@ do
   echo $filename >> $tmpfile
 done
 
-cat $tmpfile | xargs -P8 -I{} \
+cat $tmpfile | xargs -P10 -I{} \
    bash -c "
      echo Downloading https://storage.lczero.org/files/training_data/test80/{}.tar && \
      wget -q https://storage.lczero.org/files/training_data/test80/{}.tar \
