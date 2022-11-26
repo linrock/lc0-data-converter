@@ -4,6 +4,7 @@
 docker_container_id=$(docker run -d \
   --mount type=bind,source="$(pwd)"/../data,target=/root/data \
   --mount type=bind,source="$(pwd)"/../syzygy,target=/root/syzygy \
+  --mount type=bind,source=/dev/shm,target=/dev/shm \
   lc0-converter)
 
 # Attach a bash shell to the running container
