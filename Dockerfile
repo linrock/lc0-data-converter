@@ -23,13 +23,13 @@ RUN make -j build ARCH=x86-64-modern
 RUN cp stockfish /usr/local/bin
 
 WORKDIR /root
+COPY .bash_profile .
+RUN echo 'source .bash_profile' >> .bashrc
+
 COPY run_rescorer.sh .
 COPY filter_plain.sh .
 COPY filter_no_castling.py .
 COPY convert_to_binpack.sh .
 RUN chmod +x *.sh
-
-RUN echo "alias ls='ls --color=auto -X --group-directories-first'" >> ~/.bashrc
-RUN echo 'export PS1="\[\e[38;5;243m\]\u\[\e[38;5;245m\]@\[\e[38;5;249m\]\h \[\e[38;5;254m\]\w \[\033[0m\]$ "' >> ~/.bashrc
 
 CMD sleep infinity
