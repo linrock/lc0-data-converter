@@ -11,7 +11,7 @@ Example of how to download 3,4,5,6-piece Syzygy tablebases
 
 ```bash
 wget --mirror --no-parent --no-directories -e robots=off \
-  https://tablebase.lichess.ovh/tables/standard/3-4-5-dtz-nr/
+  https://tablebase.lichess.ovh/tables/standard/3-4-5/
 wget --mirror --no-parent --no-directories -e robots=off \
   https://tablebase.lichess.ovh/tables/standard/6-dtz/
 wget --mirror --no-parent --no-directories -e robots=off \
