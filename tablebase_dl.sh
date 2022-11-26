@@ -17,6 +17,14 @@ common_4v3_7p=(
   KRPPvKRP
 )
 
+# some 5v2 with material difference <= 1
+eg_5v2=(
+  KBBPPvKQ
+  KBNPPvKQ
+  KNNPPvKQ
+  KRPPPvKQ
+)
+
 # 2-pawn endgames with material difference <= 1
 eg_4v3_7p=(
   KQPPvKRR
@@ -44,7 +52,7 @@ function download_tb_data() {  # $1 = url_prefix, $2 = pieces
   done
 }
 
-for pieces in ${common_5v2_7p[@]}; do
+for pieces in ${eg_5v2[@]}; do
   download_tb_data $TB_URL/5v2_pawnful $pieces
 done
 for pieces in ${eg_4v3_7p[@]}; do
