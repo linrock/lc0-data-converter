@@ -7,7 +7,7 @@ ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 
 RUN apt update --fix-missing
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y \
-  vim git cmake wget curl python3 python3-pip \
+  vim git tmux cmake wget curl python3 python3-pip \
   clang libstdc++-12-dev ninja-build pkg-config
 
 RUN pip3 install --no-cache --upgrade pip setuptools
