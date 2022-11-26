@@ -19,7 +19,7 @@ RUN git clone https://github.com/official-stockfish/Stockfish /root/Stockfish
 WORKDIR /root/Stockfish
 RUN git checkout tools
 WORKDIR /root/Stockfish/src
-RUN make -j build ARCH=x86-64
+RUN make -j build ARCH=x86-64-modern
 RUN cp stockfish /usr/local/bin
 
 WORKDIR /root
