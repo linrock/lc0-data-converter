@@ -1,9 +1,4 @@
-FROM nvidia/cuda:11.7.1-devel-ubuntu22.04
-
-ENV PATH=/usr/local/nvidia/bin:${PATH}
-ENV PATH=/usr/local/cuda/bin:${PATH}
-ENV LIBRARY_PATH=/usr/local/cuda/lib64:${LIBRARY_PATH}
-ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
+FROM ubuntu:22.04
 
 RUN apt update --fix-missing
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y \
