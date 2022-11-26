@@ -33,13 +33,18 @@ eg_4v3_7p=(
   KQPPvKQP
 )
 
+function download_tb_data() {
+  # $1 = url prefix, $2 = pieces
+  if [ ! -f ../syzygy/7p/$2 ]; then
+    echo $2
+    wget $1/$2.rtbw -O ../syzygy/7p/$2.rtbw
+    wget $1/$2.rtbz -O ../syzygy/7p/$2.rtbz
+  fi
+}
+
 for pieces in ${common_5v2_7p[@]}; do
-  wget $TB_URL/5v2_pawnful/$pieces.rtbw -O ../syzygy/7p/$pieces.rtbw
-  wget $TB_URL/5v2_pawnful/$pieces.rtbz -O ../syzygy/7p/$pieces.rtbz
-  echo $pieces
+  download_tb_data $TB_URL/5v2_pawnful $pieces
 done
 for pieces in ${common_4v3_7p[@]}; do
-  wget $TB_URL/4v3_pawnful/$pieces.rtbw -O ../syzygy/7p/$pieces.rtbw
-  wget $TB_URL/4v3_pawnful/$pieces.rtbz -O ../syzygy/7p/$pieces.rtbz
-  echo $pieces
+  download_tb_data $TB_URL/4v3_pawnful $pieces
 done
