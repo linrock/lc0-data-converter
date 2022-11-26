@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DL_DIR="../data/syzygy/7p"
 TB_URL="https://tablebase.lichess.ovh/tables/standard/7/"
 
 # practical 7-piece endgames:
@@ -33,18 +34,19 @@ eg_4v3_7p=(
   KQPPvKQP
 )
 
-function download_tb_data() {
-  # $1 = url prefix, $2 = pieces
-  if [ ! -f ../syzygy/7p/$2 ]; then
-    echo $2
-    wget $1/$2.rtbw -O ../syzygy/7p/$2.rtbw
-    wget $1/$2.rtbz -O ../syzygy/7p/$2.rtbz
-  fi
+function download_tb_data() {  # $1 = url_prefix, $2 = pieces
+  for suffix in {rtbw,rtbz}; do
+    tb_filename=$2.$suffix
+    if [ ! -f $DL_DIR/$tb_filename ]; then
+      echo $tb_filename not found. Downloading...
+      wget $1/$tb_filename -O $DL_DIR/$tb_filename
+    fi
+  done
 }
 
 for pieces in ${common_5v2_7p[@]}; do
   download_tb_data $TB_URL/5v2_pawnful $pieces
 done
-for pieces in ${common_4v3_7p[@]}; do
+for pieces in ${eg_4v3_7p[@]}; do
   download_tb_data $TB_URL/4v3_pawnful $pieces
 done
