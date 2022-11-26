@@ -18,4 +18,6 @@ def combos_with_max_score_diff():
 
 for combos in combos_with_max_score_diff():
     # print(combos)
-    print('v'.join(['K'+c[0] for c in combos]))
+    tb7p = 'v'.join(['K'+c[0] for c in combos])
+    if not 'BBB' in tb7p and not 'NNN' in tb7p and not 'RRR' in tb7p:
+        print(tb7p)
