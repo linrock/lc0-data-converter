@@ -1,5 +1,9 @@
 import sys
 
+''' Filters out non-standard chess positions (ie. chess960). Removing all
+    positions with castling flags is not ideal, just a quick way.
+'''
+
 if len(sys.argv) != 3:
     print('Usage: ./filter_no_castling.py <input.plain> <output.plain>')
     sys.exit(0)
@@ -11,6 +15,7 @@ position = None
 num_positions = 0
 num_no_castling_positions = 0
 
+print(f'Filtering {input_file} ...')
 with open(output_file, 'w+') as fout:
     with open(input_file, 'r') as fin:
         for row in fin:
@@ -25,5 +30,6 @@ with open(output_file, 'w+') as fout:
                     # no castling moves
                     num_no_castling_positions += 1
                     fout.write(position)
-print(f'# positions:    {num_positions}')
-print(f'# no castling:  {num_no_castling_positions}')
+print(f'Filtered {input_file}')
+print(f'  # positions before: {num_positions}')
+print(f'  # positions after:  {num_no_castling_positions}')
