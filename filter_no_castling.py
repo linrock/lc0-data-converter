@@ -4,8 +4,8 @@ import sys
 ''' Filters out non-standard chess positions (ie. chess960). Removing all
     positions with castling flags is not ideal, just a quick way.
 '''
-if len(sys.argv) != 3:
-    print('Usage: ./filter_no_castling.py <input.plain> <output.plain>')
+if len(sys.argv) != 2:
+    print('Usage: ./filter_no_castling.py <input.plain>')
     sys.exit(0)
 
 input_file = sys.argv[1]
