@@ -6,7 +6,7 @@ MAX_SCORE_DIFF = 1
 def piece_combos_with_scores(n):
     scored_combos = []
     for combo in list(set(
-        [''.join(sorted(c)) for c in itertools.product(SCORES.keys(), repeat=n)]
+        [''.join(sorted(c, key=lambda p: -SCORES[p])) for c in itertools.product(SCORES.keys(), repeat=n)]
     )):
         scored_combos.append((combo, sum([SCORES[p] for p in combo])))
     return scored_combos
@@ -17,3 +17,4 @@ def find_combos_with_max_score_diff():
             if abs(pc4[1] - pc3[1]) <= MAX_SCORE_DIFF:
                 print(pc4, pc3)
 
+find_combos_with_max_score_diff()
