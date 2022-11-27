@@ -1,5 +1,5 @@
 #!/bin/bash
-# Merges filtered .plain files into a single .binpack
+# Converts filtered .plain files into .binpack files
 
 ls -1 /dev/shm/*.filtered.plain | \
-  xargs -I{} stockfish convert {} T80.may2022.binpack append validate
+  xargs -P90 -I{} stockfish convert {} {}.binpack validate
