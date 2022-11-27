@@ -1,7 +1,7 @@
 import itertools
 
 SCORES = { 'Q': 9, 'R': 5, 'B': 3.5, 'N': 3.25, 'P': 1 }
-MAX_SCORE_DIFF = 1
+MAX_SCORE_DIFF = 0.9
 
 def piece_combos_with_scores(n):
     for combo in list(set([
