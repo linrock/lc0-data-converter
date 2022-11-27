@@ -30,6 +30,7 @@ COPY run_rescorer.sh .
 COPY filter_plain.sh .
 COPY filter_no_castling.py .
 COPY convert_to_binpack.sh .
+COPY merge_binpacks.sh .
 RUN chmod +x *.sh
 
 CMD sleep infinity
