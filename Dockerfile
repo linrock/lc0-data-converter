@@ -26,10 +26,7 @@ WORKDIR /root
 COPY .bash_profile .
 RUN echo 'source .bash_profile' >> .bashrc
 
-COPY run_rescorer.sh .
-COPY filter_* .
-COPY convert_to_binpack.sh .
-COPY merge_binpacks.sh .
+COPY rescore_tar_files.sh filter_* convert_to_binpack.sh merge_binpacks.sh .
 RUN chmod +x *.sh
 
 CMD sleep infinity
