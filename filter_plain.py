@@ -6,7 +6,7 @@ import sys
     castling rights, which can't be used for training.
 '''
 if len(sys.argv) != 2:
-    print('Usage: ./filter_no_castling.py <input.plain>')
+    print('Usage: ./filter_plain.py <input.plain>')
     sys.exit(0)
 
 input_filename = sys.argv[1]
@@ -31,9 +31,8 @@ with open(input_filename, 'r') as fin, open(output_filename, 'w+') as fout:
             num_positions += 1
             castle_flag = position.split()[3]
             if castle_flag == '-':
-                # no castling moves
                 num_no_castling_positions += 1
                 fout.write(position)
-print(f'Filtered {input_file}')
+print(f'Filtered {input_filename}')
 print(f'  # positions before: {num_positions}')
 print(f'  # positions after:  {num_no_castling_positions}')
