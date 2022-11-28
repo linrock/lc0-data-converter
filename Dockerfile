@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-RUN apt update --fix-missing
+RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y \
   vim git tmux cmake wget curl python3 python3-pip \
   clang libstdc++-12-dev ninja-build pkg-config
@@ -15,10 +15,10 @@ RUN git checkout rescore_tb
 RUN CC=clang CXX=clang++ ./build.sh
 RUN cp build/release/rescorer /usr/local/bin
 
-RUN git clone https://github.com/official-stockfish/Stockfish /root/Stockfish
-WORKDIR /root/Stockfish
+RUN git clone https://github.com/official-stockfish/stockfish /root/stockfish
+WORKDIR /root/stockfish
 RUN git checkout tools
-WORKDIR /root/Stockfish/src
+WORKDIR /root/stockfish/src
 RUN make -j build ARCH=x86-64-modern
 RUN cp stockfish /usr/local/bin
 
