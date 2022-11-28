@@ -56,10 +56,13 @@ for tb7_file in tb7_file_list:
                 tb_filename = tb_file_match.group(1)
                 if not tb_filename.split('.')[0] in subsets:
                     continue
+                if 'BBB' in tb_filename or 'NNN' in tb_filename or 'RRR' in tb_filename:
+                    continue
                 tb_filesize = int(row.split()[-1])
                 tb7_data_sizes[tb_filename] = tb_filesize
                 total_data_size_bytes += tb_filesize
                 # print(tb_filename, tb_filesize)
+                print(tb_filename)
 
 total_data_size_gb = round(total_data_size_bytes / 1024 / 1024 / 1024)
 print()
