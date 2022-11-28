@@ -1,8 +1,10 @@
 #!/bin/bash
 # Takes lc0 .tar data files, rescores them with tablebases,
 # and converts them to .plain for stockfish to process later
-
-data_dir=./data/test80/may2022
+if [ "$#" -ne 1 ]; then
+  echo "Usage: ./run_rescorer.sh <data_dir>"
+  exit 0
+fi
 
 function rescore_tar_file() {
   filepath=$1
@@ -22,5 +24,5 @@ function rescore_tar_file() {
 }
 export -f rescore_tar_file
 
-cd $data_dir
+cd $1
 ls -1 *.tar | xargs -P3 -I{} bash -c 'rescore_tar_file "$@"' _ {}
