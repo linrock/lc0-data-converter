@@ -27,8 +27,7 @@ COPY .bash_profile .
 RUN echo 'source .bash_profile' >> .bashrc
 
 COPY run_rescorer.sh .
-COPY filter_plain.sh .
-COPY filter_no_castling.py .
+COPY filter_* .
 COPY convert_to_binpack.sh .
 COPY merge_binpacks.sh .
 RUN chmod +x *.sh
