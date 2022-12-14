@@ -5,5 +5,5 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # Filters positions out of .plain files concurrently
-ls -1 $1/*.plain | grep -v filtered | \
+ls -1v $1/*.plain | grep -v filtered | \
   xargs -P16 -I{} python3 filter_plain.py {}
