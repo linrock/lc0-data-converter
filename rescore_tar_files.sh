@@ -18,6 +18,8 @@ function rescore_tar_file() {
     --input=./$dirname \
     --syzygy-paths=/root/syzygy/345p:/root/syzygy/6p:/root/syzygy/7p \
     --nnue-plain-file=/root/data/$dirname.plain \
+    --nnue-best-score=true \
+    --nnue-best-move=true \
     --threads=20
 
   rm -rf $dirname
