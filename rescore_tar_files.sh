@@ -27,4 +27,4 @@ function rescore_tar_file() {
 export -f rescore_tar_file
 
 cd $1
-ls -1 *.tar | xargs -P3 -I{} bash -c 'rescore_tar_file "$@"' _ {}
+ls -1v *.tar | xargs -P3 -I{} bash -c 'rescore_tar_file "$@"' _ {}
