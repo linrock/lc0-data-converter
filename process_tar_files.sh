@@ -40,6 +40,7 @@ function process_tar_file() {
   ls -lth $dirname.binpack
 
   if [ -f $dirname.binpack ]; then
+    rm $tarfile
     rm $rescored_plain
     rm $dirname.filtered.plain
   else
@@ -50,4 +51,4 @@ function process_tar_file() {
 export -f process_tar_file
 
 cd $1
-ls -1v *.tar | xargs -P1 -I{} bash -c 'process_tar_file "$@"' _ {}
+ls -1v *.tar | xargs -P8 -I{} bash -c 'process_tar_file "$@"' _ {}
