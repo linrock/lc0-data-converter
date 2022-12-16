@@ -32,6 +32,9 @@ function process_tar_file() {
     --nnue-plain-file=$rescored_plain \
     --nnue-best-score=true \
     --nnue-best-move=true \
+    --deblunder=true \
+    --deblunder-q-blunder-threshold=0.10 \
+    --deblunder-q-blunder-width=0.03 \
     --threads=20
 
   rm -rf $dirname
