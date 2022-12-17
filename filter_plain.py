@@ -59,9 +59,10 @@ with open(input_filename, 'r') as infile, open(output_filename, 'w+') as outfile
                 num_non_standard_positions += 1
 
 print(f'Filtered {input_filename} to {output_filename}')
-print(f'  # standard games:      {num_standard_games}')
-print(f'  # non-standard games:  {num_non_standard_games}')
-print(f'  # positions:           {num_positions}')
-print(f'  # no-castling flags:   {num_no_castling_flag_positions}')
-print(f'  # ignored positions:   {num_non_standard_positions}')
-print(f'  # filtered positions:  {num_filtered_positions}')
+print(f'  # games:                 {num_standard_games + num_non_standard_games}')
+print(f'    # standard games:      {num_standard_games}')
+print(f'    # non-standard games:  {num_non_standard_games}')
+print(f'  # positions:             {num_positions}')
+print(f'    # no-castling flags:   {num_no_castling_flag_positions}')
+print(f'    # ignored positions:   {num_non_standard_positions}')
+print(f'  # filtered positions:    {num_filtered_positions}')
