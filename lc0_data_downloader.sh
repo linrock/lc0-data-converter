@@ -18,8 +18,7 @@ mkdir -p $download_dir
 # max concurrency 10, otherwise http 429 errors
 xargs -P 10 -a <(
   curl -sL $DATASET_URL | grep -oE "training-run[^>]*tar" | sort -u | \
-    xargs -I{} basename {} .tar | \
-    grep 20220[67]
+    xargs -I{} basename {} .tar    # | grep 20220[67]
 ) \
   -I{} \
     bash -c "ls -lth {}.binpack || ls -lth {}.tar || \
