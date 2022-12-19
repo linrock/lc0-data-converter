@@ -8,7 +8,6 @@ DATASET_URL="https://storage.lczero.org/files/training_data/$LC0_DATASET"
 download_dir=~/data/$LC0_DATASET
 echo Downloading to $download_dir
 mkdir -p $download_dir
-cd $download_dir
 
 # Example of manually specifying filenames to download
 #  for filename in training-run1-test80-202209{01..31}-{00..23}17
@@ -29,4 +28,4 @@ xargs -P 10 -a <(
                  (echo Failed to download {}.tar ; rm {}.tar ))"
 
 # clean up files from download errors (ie. files that don't exist)
-find $download_dir -name "*.tar" -size 0 -delete
+# find $download_dir -name "*.tar" -size 0 -delete
