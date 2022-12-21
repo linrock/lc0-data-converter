@@ -22,11 +22,13 @@ sudo apt install docker.io
 Use `lc0_data_downloader.sh` to download training data. Convert the training data either by:
 
 A sequence of
+
 - `rescore_tar_files.sh` to use the lc0 rescorer tool to convert tar data files to .plain
 - `filter_many_plain.sh` to filter positions out of the converted .plain files
 - `convert_to_binpack` to convert plain files into binpack data files
 
 Converting .tar files to .binpacks and deleting the .tar files afterwards
+
 - `process_tar_files.sh`
 
 
