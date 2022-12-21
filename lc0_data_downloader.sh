@@ -1,5 +1,5 @@
 #!/bin/bash
-# Naive downloader for lc0 training data
+# Downloads lc0 training data from the given dataset in chronological order
 
 LC0_DATASET=test80
 DATASET_URL="https://storage.lczero.org/files/training_data/$LC0_DATASET"
