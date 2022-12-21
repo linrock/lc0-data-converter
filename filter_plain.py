@@ -1,9 +1,7 @@
 import os.path
 import sys
 
-''' Filters out all chess positions with castling rights. Not
-    ideal, just a quick way to remove Chess 960 positions with
-    castling rights, which can't be used for training.
+''' Filters out all non-standard chess positions with castling rights
 '''
 if len(sys.argv) != 2:
     print('Usage: ./filter_plain.py <input.plain>')
@@ -51,7 +49,7 @@ with open(input_filename, 'r') as infile, open(output_filename, 'w+') as outfile
                 num_no_castling_flag_positions += 1
                 outfile.write(position)
             elif is_standard_game:
-                # positions with castling rights in standard games is ok
+                # positions with castling rights in standard games are ok
                 num_filtered_positions += 1
                 outfile.write(position)
             else:
