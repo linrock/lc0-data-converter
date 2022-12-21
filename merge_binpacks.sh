@@ -7,7 +7,7 @@ fi
 
 output_binpack=merged.binpack
 
-rm -rf $output_binpack
+# rm -f $output_binpack
 python3 ./stockfish/script/interleave_binpacks.py \
-  $(ls -1 $1/*.plain.binpack | tr '\n' ' ' && echo $output_binpack)
+  $(ls -1 $1/*.binpack | tr '\n' ' ' && echo $output_binpack)
 ls -lth $output_binpack
