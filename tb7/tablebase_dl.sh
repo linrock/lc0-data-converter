@@ -58,7 +58,7 @@ function download_tb7_data() {
     fi
     if echo $pieces | grep -E 'vK$' > /dev/null; then
       subtype=6v1
-    elif echo $pieces | grep -E 'K[QRBN]{4}v' > /dev/null; then
+    elif echo $pieces | grep -E 'K[QRBNP]{4}v' > /dev/null; then
       subtype=5v2
     else
       subtype=4v3
