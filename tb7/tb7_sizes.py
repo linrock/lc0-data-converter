@@ -56,7 +56,7 @@ for tb7_file in tb7_file_list:
                 tb_filename = tb_file_match.group(1)
                 if not tb_filename.split('.')[0] in subsets:
                     continue
-                if any(skip in tb_filename for skip in ['BBB', 'NNN', 'RRR', 'QQQ']):
+                if any(skip in tb_filename for skip in ['BBB', 'NNN', 'RRR', 'QQQ', 'vK.']):
                     continue
                 tb_filesize = int(row.split()[-1])
                 tb7_data_sizes[tb_filename] = tb_filesize
