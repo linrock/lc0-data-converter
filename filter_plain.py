@@ -17,7 +17,7 @@ if os.path.isfile(output_filename):
 position = None
 num_positions = 0
 num_filtered_positions = 0
-num_non_standard_positions = 0
+num_ignored_positions = 0
 num_no_castling_flag_positions = 0
 
 is_standard_game = False
@@ -48,19 +48,19 @@ with open(input_filename, 'r') as infile, open(output_filename, 'w+') as outfile
                 num_filtered_positions += 1
                 num_no_castling_flag_positions += 1
                 outfile.write(position)
-            elif is_standard_game:
-                # positions with castling rights in standard games are ok
-                num_filtered_positions += 1
-                outfile.write(position)
+            # elif is_standard_game:
+            #     # positions with castling rights in standard games are ok
+            #     num_filtered_positions += 1
+            #     outfile.write(position)
             else:
                 # ignore positions with castling rights in non-standard games
-                num_non_standard_positions += 1
+                num_ignored_positions += 1
 
 print(f'Filtered {input_filename} to {output_filename}')
-print(f'  # games:                 {num_standard_games + num_non_standard_games}')
-print(f'    # standard games:      {num_standard_games}')
-print(f'    # non-standard games:  {num_non_standard_games}')
-print(f'  # positions:             {num_positions}')
-print(f'    # no-castling flags:   {num_no_castling_flag_positions}')
-print(f'    # ignored positions:   {num_non_standard_positions}')
-print(f'  # filtered positions:    {num_filtered_positions}')
+print(f'  # games:                   {num_standard_games + num_non_standard_games}')
+print(f'    # standard games:        {num_standard_games}')
+print(f'    # non-standard games:    {num_non_standard_games}')
+print(f'  # positions:               {num_positions}')
+print(f'    # no-castling flags:     {num_no_castling_flag_positions}')
+print(f'    # ignored positions:     {num_ignored_positions}')
+print(f'  # positions after filter:  {num_filtered_positions}')
